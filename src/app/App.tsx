@@ -6,23 +6,25 @@ import {
   ShieldCheck, Layers, RefreshCw, DollarSign, Settings, Clock, MessageCircle,
 } from "lucide-react";
 
+const publicAsset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 /* ─── DATA ─── */
 
 const HERO_SLIDES = [
   {
     heading: "Leading Cocopeat Manufacturer in India",
     sub: "Bulk Export to Global Growers",
-    img: "/coconut-photos/res-cocopeat-banner.jpg",
+    img: publicAsset("coconut-photos/res-cocopeat-banner.jpg"),
   },
   {
     heading: "Cocopeat Manufacturer & Exporter",
     sub: "for your Coir Solutions",
-    img: "/coconut-photos/Coco-Peat-1.jpg",
+    img: publicAsset("coconut-photos/Coco-Peat-1.jpg"),
   },
   {
     heading: "Premium Coir Products & Sustainable Solutions",
     sub: "for Global Agriculture",
-    img: "/coconut-photos/Hydroponics.jpg",
+    img: publicAsset("coconut-photos/Hydroponics.jpg"),
   },
 ];
 
@@ -42,7 +44,7 @@ const PRODUCTS = [
   {
     name: "Washed Loose Cocopeat",
     sub: "Refined Coir Pith",
-    img: "/coconut-photos/Loosen Cocopeat washed.jpg",
+    img: publicAsset("coconut-photos/Loosen Cocopeat washed.jpg"),
     descriptionFile: "washed-loose-cocopeat.txt",
     desc: "A refined coir pith product made from coconut husk after coir fibre extraction. It is washed to remove excess soluble salts and impurities, then drained and dried while retaining cocopeat's natural porous structure.",
     specs: ["Loose form", "Washed", "Lower salinity", "Horticultural use"],
@@ -51,7 +53,7 @@ const PRODUCTS = [
   {
     name: "Washed Cocopeat Blocks",
     sub: "Compressed Growing Medium",
-    img: "/coconut-photos/Blocks Cocopeat washed.jpg",
+    img: publicAsset("coconut-photos/Blocks Cocopeat washed.jpg"),
     descriptionFile: "washed-cocopeat-blocks.txt",
     desc: "Compressed cocopeat blocks processed through washing, draining, drying, and screening to reduce excess soluble salts and impurities. The blocks save storage and transport space and expand into a porous growing medium when hydrated.",
     specs: ["Compressed blocks", "Washed", "High water retention", "Good aeration"],
@@ -60,7 +62,7 @@ const PRODUCTS = [
   {
     name: "Unwashed Loose Cocopeat",
     sub: "Natural Coir Pith",
-    img: "/coconut-photos/loosen unwashed cocopeat.webp",
+    img: publicAsset("coconut-photos/loosen unwashed cocopeat.webp"),
     descriptionFile: "unwashed-loose-cocopeat.txt",
     desc: "Natural coir pith obtained during mechanical coconut-husk processing. It is screened and supplied loose without washing or chemical buffering, preserving its natural mineral content for general horticultural use or further processing.",
     specs: ["Loose form", "Unwashed", "Natural minerals", "Raw material"],
@@ -69,7 +71,7 @@ const PRODUCTS = [
   {
     name: "Unwashed Cocopeat Blocks",
     sub: "Compressed Natural Cocopeat",
-    img: "/coconut-photos/unwashed cocopeat blocks.png",
+    img: publicAsset("coconut-photos/unwashed cocopeat blocks.png"),
     descriptionFile: "unwashed-cocopeat-blocks.txt",
     desc: "Compressed blocks made from screened and dried natural cocopeat without washing or buffering. When hydrated, they expand into loose cocopeat suitable for a variety of horticultural and agricultural applications.",
     specs: ["Compressed blocks", "Unwashed", "Efficient transport", "Natural content"],
@@ -78,7 +80,7 @@ const PRODUCTS = [
   {
     name: "Premium Low EC Loose Cocopeat",
     sub: "Low-Salinity Growing Medium",
-    img: "/coconut-photos/premiu low ec loose cocopeat.webp",
+    img: publicAsset("coconut-photos/premiu low ec loose cocopeat.webp"),
     descriptionFile: "premium-low-ec-loose-cocopeat.txt",
     desc: "Loose, ready-to-use coir pith processed through washing, screening, and drying to maintain a low and controlled concentration of soluble salts. Suitable for seed propagation, nurseries, greenhouses, potting mixes, and hydroponics.",
     specs: ["Loose form", "Low EC", "Ready to use", "Hydroponic suitable"],
@@ -87,7 +89,7 @@ const PRODUCTS = [
   {
     name: "Premium Low EC Cocopeat Blocks",
     sub: "Controlled-Salinity Blocks",
-    img: "/coconut-photos/premium low ec block cocopeat.jpg",
+    img: publicAsset("coconut-photos/premium low ec block cocopeat.jpg"),
     descriptionFile: "premium-low-ec-cocopeat-blocks.txt",
     desc: "Washed, dried, screened, and compressed cocopeat blocks designed for a low and controlled level of soluble salts. Hydration produces a lightweight growing medium with strong water retention, aeration, and root-zone structure.",
     specs: ["Compressed blocks", "Low EC", "Washed", "Nursery suitable"],
@@ -96,7 +98,7 @@ const PRODUCTS = [
   {
     name: "Premium Buffered Loose Cocopeat",
     sub: "Stabilized Growing Medium",
-    img: "/coconut-photos/premium buffered loose cocopeat.jpg",
+    img: publicAsset("coconut-photos/premium buffered loose cocopeat.jpg"),
     descriptionFile: "premium-buffered-loose-cocopeat.txt",
     desc: "Premium loose coir pith that undergoes washing and controlled calcium-based buffering to reduce excess soluble salts and balance exchangeable minerals. Supplied expanded and ready to use for professional horticulture, nurseries, greenhouses, and hydroponics.",
     specs: ["Loose form", "Buffered", "Low salinity", "Ready to use"],
@@ -105,7 +107,7 @@ const PRODUCTS = [
   {
     name: "Premium Buffered Cocopeat Blocks",
     sub: "Compressed Stabilized Cocopeat",
-    img: "/coconut-photos/premium buffered block cocpeat.jpg",
+    img: publicAsset("coconut-photos/premium buffered block cocpeat.jpg"),
     descriptionFile: "premium-buffered-cocopeat-blocks.txt",
     desc: "Washed, buffered, dried, and compressed cocopeat blocks that reduce storage and transportation volume. When hydrated, they expand into a lightweight, porous growing medium with excellent water retention and root-zone aeration.",
     specs: ["Compressed blocks", "Buffered", "Space efficient", "Excellent aeration"],
@@ -114,7 +116,7 @@ const PRODUCTS = [
   {
     name: "Cocopeat Grow Bags",
     sub: "Ready-to-Use Growing Media",
-    img: "/coconut-photos/Cocopeat growbag.jpg",
+    img: publicAsset("coconut-photos/Cocopeat growbag.jpg"),
     descriptionFile: "cocopeat-grow-bags.txt",
     desc: "Ready-to-use growing media made from processed coconut coir pith and packed in durable, UV-resistant polyethylene bags. They provide water retention, aeration, and drainage for greenhouse, nursery, and soilless cultivation.",
     specs: ["UV-resistant bags", "Ready to use", "Custom EC options", "Greenhouse suitable"],
@@ -123,7 +125,7 @@ const PRODUCTS = [
   {
     name: "Coco Coir Fibre",
     sub: "Natural Renewable Fibre",
-    img: "/coconut-photos/Coco coir fibre.jpg",
+    img: publicAsset("coconut-photos/Coco coir fibre.jpg"),
     descriptionFile: "coco-coir-fibre.txt",
     desc: "A natural, renewable fibre extracted from mature coconut husks during mechanical processing. Available in long, medium, short, or baled forms, it is valued for strength, durability, resilience, and moisture resistance.",
     specs: ["Long / medium / short", "Baled options", "Moisture resistant", "Industrial use"],
@@ -360,7 +362,7 @@ export default function App() {
     if (!product) return;
 
     setLoadingDescription(expandedProduct);
-    fetch(`/products/${product.descriptionFile}`)
+    fetch(publicAsset(`products/${product.descriptionFile}`))
       .then((response) => {
         if (!response.ok) throw new Error(`Unable to load ${product.name} description`);
         return response.text();
@@ -414,7 +416,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-5 flex items-center justify-between h-16">
           <button onClick={() => scrollTo("home")} className="flex items-center gap-2.5">
             <img
-              src="/aditya-overseas-logo.png"
+              src={publicAsset("aditya-overseas-logo.png")}
               alt="Aditya Overseas Enterprises Private Limited logo"
               className="w-10 h-10 rounded-lg object-contain shrink-0"
             />
@@ -660,21 +662,21 @@ export default function App() {
           <FadeIn delay={150} className="grid grid-cols-2 gap-4">
             <div className="aspect-[3/4] rounded-lg overflow-hidden bg-muted row-span-2">
               <img
-                src="/coconut-photos/coconut-husk.webp"
+                src={publicAsset("coconut-photos/coconut-husk.webp")}
                 alt="Coconut husks — raw material for cocopeat"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="aspect-square rounded-lg overflow-hidden bg-muted">
               <img
-                src="/coconut-photos/Blocks Cocopeat washed.jpg"
+                src={publicAsset("coconut-photos/Blocks Cocopeat washed.jpg")}
                 alt="Coconut shells used in coir processing"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="aspect-square rounded-lg overflow-hidden bg-muted">
               <img
-                src="/coconut-photos/Coco coir fibre.jpg"
+                src={publicAsset("coconut-photos/Coco coir fibre.jpg")}
                 alt="Young plants growing in cocopeat medium"
                 className="w-full h-full object-cover"
               />
@@ -1122,7 +1124,7 @@ export default function App() {
           <FadeIn delay={150}>
             <div className="rounded-xl overflow-hidden shadow-xl h-full min-h-[420px] bg-muted">
               <img
-                src="/coconut-photos/coconut-husk.webp"
+                src={publicAsset("coconut-photos/coconut-husk.webp")}
                 alt="Coconuts and coconut husk"
                 className="w-full h-full object-cover"
               />
@@ -1137,7 +1139,7 @@ export default function App() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2.5 mb-4">
               <img
-                src="/aditya-overseas-logo.png"
+                src={publicAsset("aditya-overseas-logo.png")}
                 alt="Aditya Overseas Enterprises Private Limited logo"
                 className="w-10 h-10 rounded-lg object-contain shrink-0"
               />
